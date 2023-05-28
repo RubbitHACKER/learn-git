@@ -1,2 +1,1 @@
-# learn-git
-learning how to use git
+My readme file to learn git 
