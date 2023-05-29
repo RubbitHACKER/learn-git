@@ -1,0 +1,6 @@
+include<mathh>
+
+main;
+int n,k;
+float h;
+printf("hello world!)
