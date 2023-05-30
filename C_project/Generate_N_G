@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int rechercheBinaire(int min, int max) {
+    return (min + max) / 2;
+}
+
+int main() {
+    int nombreMystere, proposition;
+    int min = 1, max = 100;
+    char reponse;
+    
+    srand(time(NULL));
+    
+    printf("Pensez à un nombre entre 1 et 100.\n\n");
+    
+    do {
+        // L'ordinateur fait une proposition
+        proposition = rechercheBinaire(min, max);
+        
+        printf("L'ordinateur propose : %d\n", proposition);
+        printf("Est-ce que c'est le bon nombre ? (O/N) : ");
+        scanf(" %c", &reponse);
+        reponse = toupper(reponse);
+        
+        if (reponse == 'O') {
+            printf("L'ordinateur a trouvé le nombre mystère !\n");
+        } else {
+            printf("Est-ce plus grand ou plus petit ? (G/P) : ");
+            scanf(" %c", &reponse);
+            reponse = toupper(reponse);
+            
+            if (reponse == 'G') {
+                min = proposition + 1;
+            } else if (reponse == 'P') {
+                max = proposition - 1;
+            } else {
+                printf("Réponse invalide. Veuillez entrer 'G' pour plus grand ou 'P' pour plus petit.\n");
+            }
+        }
+        
+        printf("\n");
+    } while (reponse != 'O');
+    
+    return 0;
+}
+
