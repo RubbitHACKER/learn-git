@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int joueur, ordinateur;
+    
+    srand(time(NULL));
+    
+    printf("Bienvenue dans le jeu Pierre-Papier-Ciseaux !\n\n");
+    printf("Choisissez votre coup : \n");
+    printf("1. Pierre\n");
+    printf("2. Papier\n");
+    printf("3. Ciseaux\n");
+    printf("Votre choix : ");
+    scanf("%d", &joueur);
+    
+    if (joueur < 1 || joueur > 3) {
+        printf("Choix invalide. Veuillez choisir un nombre entre 1 et 3.\n");
+        return 0;
+    }
+    
+    ordinateur = rand() % 3 + 1;
+    
+    printf("Vous avez choisi : ");
+    switch (joueur) {
+        case 1:
+            printf("Pierre\n");
+            break;
+        case 2:
+            printf("Papier\n");
+            break;
+        case 3:
+            printf("Ciseaux\n");
+            break;
+    }
+    
+    printf("L'ordinateur a choisi : ");
+    switch (ordinateur) {
+        case 1:
+            printf("Pierre\n");
+            break;
+        case 2:
+            printf("Papier\n");
+            break;
+        case 3:
+            printf("Ciseaux\n");
+            break;
+    }
+    
+    if (joueur == ordinateur) {
+        printf("Égalité !\n");
+    } else if ((joueur == 1 && ordinateur == 3) || (joueur == 2 && ordinateur == 1) || (joueur == 3 && ordinateur == 2)) {
+        printf("Vous avez gagné !\n");
+    } else {
+        printf("L'ordinateur a gagné !\n");
+    }
+    
+    return 0;
+}
+
