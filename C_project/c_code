@@ -1,0 +1,23 @@
+include<stdio.h>
+include<stdlib.h>
+int main (){
+int s, m, i ,T[3]
+for (i=0;i<=4;i++){
+printf("please inser the %d studients notes ",i );
+scanf ("%d",T[i]);
+}
+m=0;
+s=0
+for (i=0;i<=4;i++)
+s=s+T[i];
+m=s/3;
+if (m<10)
+printf ("vous pouvez pas passer ")
+else if (m==10&&m<=12)
+printf("votre notion est assez bien ")
+else if (m>12 && m<=15)
+printf("votre notion est :bien")
+else 
+printf("exelent");
+return;0
+}
